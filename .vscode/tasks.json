@@ -1,0 +1,30 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile llvm c++",
+            "type": "shell",
+            "command": "clang++",
+            "args": [
+                "-std=c++20",
+                "latihan_1.cpp",
+                "-o",
+                "latihan_1.exe"
+            ]
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "command": "./latihan_1.exe",
+            "dependsOn": [
+                "Compile llvm c++"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
